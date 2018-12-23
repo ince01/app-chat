@@ -10,14 +10,20 @@ namespace app_chat
         public frmMain()
         {
             InitializeComponent();
-            socket.On("chat message", (data) =>
-             {
-                 list_msg.Items.Add(data.ToString());
-             });
         }
 
-        Socket socket = IO.Socket("http://localhost:3000");
+        public void socketManager()
+        {
+            var socket = IO.Socket("http://192.168.1.107:3000");
+            socket.Emit("chat message", txt_msg.Text);
+            //list_msg.Items.Add(txt_msg.Text);
+            socket.On("chat message", (data) =>
+            {
+                list_msg.Items.Add(data.ToString());
+                socket.Disconnect();
 
+            });
+        }
 
         private void metroLink1_Click(object sender, EventArgs e)
         {
@@ -29,7 +35,7 @@ namespace app_chat
 
         private void btn_send_Click(object sender, EventArgs e)
         {
-            socket.Emit("chat message", txt_msg.Text);
+            socketManager();
             txt_msg.Clear();
             txt_msg.Focus();
         }
