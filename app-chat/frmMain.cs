@@ -7,7 +7,7 @@ namespace app_chat
 {
     public partial class frmMain : MetroForm
     {
-        Socket socket = IO.Socket("http://192.168.1.34:3000");
+        Socket socket = IO.Socket("https://app-chat-server.herokuapp.com/");
 
 
         public frmMain()
