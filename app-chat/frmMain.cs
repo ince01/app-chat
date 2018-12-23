@@ -7,23 +7,32 @@ namespace app_chat
 {
     public partial class frmMain : MetroForm
     {
+        Socket socket = IO.Socket("http://192.168.1.34:3000");
+
+
         public frmMain()
         {
             InitializeComponent();
+            socket.On("chat message", (data) =>
+            {
+                list_msg.Items.Add(data.ToString());
+                //socket.Disconnect();
+
+            });
         }
 
         public void socketManager()
         {
-            var socket = IO.Socket("http://192.168.1.107:3000");
-            socket.Emit("chat message", txt_msg.Text);
+            socket.Emit("chat message", txt_name.Text + ":  " + txt_msg.Text);
             //list_msg.Items.Add(txt_msg.Text);
-            socket.On("chat message", (data) =>
-            {
-                list_msg.Items.Add(data.ToString());
-                socket.Disconnect();
+            //socket.On("chat message", (data) =>
+            //{
+            //    list_msg.Items.Add(data.ToString());
+            //    //socket.Disconnect();
 
-            });
+            //});
         }
+
 
         private void metroLink1_Click(object sender, EventArgs e)
         {
