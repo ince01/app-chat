@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="appchatdbModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="appchatdbModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="appchatdbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

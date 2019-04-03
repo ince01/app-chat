@@ -32,7 +32,7 @@
             this.btn_send = new MetroFramework.Controls.MetroLink();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.list_msg = new System.Windows.Forms.ListBox();
-            this.txt_name = new MetroFramework.Controls.MetroTextBox();
+            this.txt_username = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // txt_msg
@@ -96,37 +96,14 @@
             this.list_msg.Size = new System.Drawing.Size(381, 108);
             this.list_msg.TabIndex = 5;
             // 
-            // txt_name
+            // txt_username
             // 
-            // 
-            // 
-            // 
-            this.txt_name.CustomButton.Image = null;
-            this.txt_name.CustomButton.Location = new System.Drawing.Point(359, 1);
-            this.txt_name.CustomButton.Name = "";
-            this.txt_name.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txt_name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_name.CustomButton.TabIndex = 1;
-            this.txt_name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txt_name.CustomButton.UseSelectable = true;
-            this.txt_name.CustomButton.Visible = false;
-            this.txt_name.Lines = new string[0];
-            this.txt_name.Location = new System.Drawing.Point(23, 63);
-            this.txt_name.MaxLength = 32767;
-            this.txt_name.Name = "txt_name";
-            this.txt_name.PasswordChar = '\0';
-            this.txt_name.PromptText = "Enter name ...";
-            this.txt_name.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_name.SelectedText = "";
-            this.txt_name.SelectionLength = 0;
-            this.txt_name.SelectionStart = 0;
-            this.txt_name.ShortcutsEnabled = true;
-            this.txt_name.Size = new System.Drawing.Size(381, 23);
-            this.txt_name.TabIndex = 6;
-            this.txt_name.UseSelectable = true;
-            this.txt_name.WaterMark = "Enter name ...";
-            this.txt_name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txt_name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_username.AutoSize = true;
+            this.txt_username.Location = new System.Drawing.Point(23, 11);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(66, 19);
+            this.txt_username.TabIndex = 6;
+            this.txt_username.Text = "username";
             // 
             // frmMain
             // 
@@ -134,15 +111,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 322);
             this.ControlBox = false;
-            this.Controls.Add(this.txt_name);
+            this.Controls.Add(this.txt_username);
             this.Controls.Add(this.list_msg);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.txt_msg);
             this.Name = "frmMain";
             this.Resizable = false;
-            this.Text = "App Chat";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,7 +130,7 @@
         private MetroFramework.Controls.MetroLink btn_send;
         private MetroFramework.Controls.MetroLink metroLink1;
         private System.Windows.Forms.ListBox list_msg;
-        private MetroFramework.Controls.MetroTextBox txt_name;
+        private MetroFramework.Controls.MetroLabel txt_username;
     }
 }
 

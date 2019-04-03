@@ -26,5 +26,7 @@ namespace app_chat.Properties
                 return defaultInstance;
             }
         }
+
+       
     }
 }
